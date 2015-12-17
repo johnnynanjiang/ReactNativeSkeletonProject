@@ -1,0 +1,3 @@
+rootProject.name = 'ReactNativeSkeletonProject'
+
+include ':app'
