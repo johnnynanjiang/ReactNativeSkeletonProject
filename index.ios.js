@@ -12,6 +12,7 @@ var {
   View,
 } = React;
 
+/* The original version
 var ReactNativeSkeletonProject = React.createClass({
   render: function() {
     return (
@@ -30,6 +31,25 @@ var ReactNativeSkeletonProject = React.createClass({
     );
   }
 });
+*/
+
+/* The ES6 version */
+class ReactNativeSkeletonProject extends React.Component {
+    render() {
+        return <View style={styles.container}>
+                   <Text style={styles.welcome}>
+                     Welcome to React Native! (ES6+)
+                   </Text>
+                   <Text style={styles.instructions}>
+                     To get started, edit index.ios.js
+                   </Text>
+                   <Text style={styles.instructions}>
+                     Press Cmd+R to reload,{'\n'}
+                     Cmd+D or shake for dev menu
+                   </Text>
+               </View>;
+    }
+}
 
 var styles = StyleSheet.create({
   container: {
