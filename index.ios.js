@@ -1,10 +1,10 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- */
 'use strict';
 
-var React = require('react-native');
+var React = require('react-native')
+
+import Styles from './ios/javascript/styles/Styles'
+import HomeComponent from './ios/javascript/components/HomeComponent'
+
 var {
   AppRegistry,
   StyleSheet,
@@ -12,62 +12,24 @@ var {
   View,
 } = React;
 
-/* The original version
-var ReactNativeSkeletonProject = React.createClass({
-  render: function() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
-      </View>
-    );
-  }
-});
-*/
+var customStyles = StyleSheet.create(
+    {
+        welcome: {
+            fontSize: 20,
+            textAlign: 'center',
+            margin: 10,
+        },
+        instructions: {
+            textAlign: 'center',
+            color: '#333333',
+            marginBottom: 5,
+        },
+    });
 
-/* The ES6 version */
 class ReactNativeSkeletonProject extends React.Component {
     render() {
-        return <View style={styles.container}>
-                   <Text style={styles.welcome}>
-                     Welcome to React Native! (ES6+)
-                   </Text>
-                   <Text style={styles.instructions}>
-                     To get started, edit index.ios.js
-                   </Text>
-                   <Text style={styles.instructions}>
-                     Press Cmd+R to reload,{'\n'}
-                     Cmd+D or shake for dev menu
-                   </Text>
-               </View>;
+        return <HomeComponent/>;
     }
 }
-
-var styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
 
 AppRegistry.registerComponent('ReactNativeSkeletonProject', () => ReactNativeSkeletonProject);
