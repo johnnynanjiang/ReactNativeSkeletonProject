@@ -2,6 +2,7 @@
 
 1. run: npm install.
 2. for iOS, go to 'ios' folder, and open the xcode project, then build and run it.
+3. for Android, run: react-native run-android.
 
 ##References
 
