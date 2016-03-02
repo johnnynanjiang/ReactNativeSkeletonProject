@@ -1,33 +1,43 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- */
 'use strict';
 
 var React = require('react-native');
+
+import Styles from './ios/javascript/styles/Styles';
+import HomeComponent from './ios/javascript/components/HomeComponent';
+import LoginComponent from './ios/javascript/components/LoginComponent';
+
 var {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View,
+    AppRegistry,
+    StyleSheet,
+    Text,
+    View,
+    Navigator,
 } = React;
 
 var ReactNativeSkeletonProject = React.createClass({
-  render: function() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Shake or press menu button for dev menu
-        </Text>
-      </View>
-    );
-  }
+    render() {
+        return <Navigator
+            navigationBarHidden={false}
+
+            initialRoute={
+                {
+                    name: "Login",
+                    component: LoginComponent,
+                    backButtonTitle: "back"
+                }
+            }
+
+            configureScene={() => {
+                return Navigator.SceneConfigs.FloatFromRight;
+            }}
+
+            renderScene={(route, navigator) => {
+                if (route.component) {
+                    return React.createElement(route.component, { navigator });
+                }
+            }}
+        />;
+    }
 });
 
 var styles = StyleSheet.create({
