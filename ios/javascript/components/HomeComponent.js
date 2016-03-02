@@ -6,6 +6,7 @@ import Tabbar, { Tab, RawContent, IconWithBar, glypyMapMaker } from 'react-nativ
 import Styles from '../styles/Styles';
 
 import LoginComponent from './LoginComponent';
+import ListComponent from './ListComponent';
 import SettingsComponent from './SettingsComponent';
 
 var {
@@ -26,9 +27,9 @@ class HomeComponent extends React.Component {
     render() {
         return <Tabbar ref="myTabbar" barColor={'gray'}>
                 <Tab name="home">
-                    <IconWithBar label="Home" type={glypy.Home} from={'IcoMoon-Free'}/>
+                    <IconWithBar label="List" type={glypy.Home} from={'IcoMoon-Free'}/>
                     <RawContent>
-                        <LoginComponent/>
+                        <ListComponent/>
                     </RawContent>
                 </Tab>
                 <Tab name="camera">
@@ -50,17 +51,19 @@ class HomeComponent extends React.Component {
                 <Tab name="favorite">
                     <IconWithBar label="Fav" type={glypy.Favorite} from={'IcoMoon-Free'}/>
                     <RawContent>
-                        <LoginComponent/>
+                        <View style={{ flex: 1, backgroundColor: 'white', alignItems: 'center', justifyContent:'center' }}>
+                            <Text onPress={()=>console.log('favorite')}>Favorite</Text>
+                        </View>
                     </RawContent>
                 </Tab>
                 <Tab name="settings">
                     <IconWithBar label="Settings" type={glypy.Settings} from={'IcoMoon-Free'}/>
                     <RawContent>
-                        <SettingsComponent/>
+                        <SettingsComponent navigator={this.props.navigator}/>
                     </RawContent>
                 </Tab>
             </Tabbar>;
     }
 }
 
-module.exports = HomeComponent;
+export default HomeComponent;

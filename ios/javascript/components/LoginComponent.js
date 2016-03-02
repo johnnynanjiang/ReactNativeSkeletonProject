@@ -42,4 +42,4 @@ class LoginComponent extends React.Component {
     }
 }
 
-module.exports = LoginComponent;
+export default LoginComponent;
