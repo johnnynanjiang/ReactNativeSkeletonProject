@@ -5,8 +5,8 @@ import Tabbar, { Tab, RawContent, IconWithBar, glypyMapMaker } from 'react-nativ
 
 import Styles from '../styles/Styles';
 
-import SettingsComponent from './SettingsComponent';
 import LoginComponent from './LoginComponent';
+import SettingsComponent from './SettingsComponent';
 
 var {
     StyleSheet,
@@ -28,9 +28,7 @@ class HomeComponent extends React.Component {
                 <Tab name="home">
                     <IconWithBar label="Home" type={glypy.Home} from={'IcoMoon-Free'}/>
                     <RawContent>
-                        <View style={{ flex: 1, backgroundColor: 'white', alignItems: 'center', justifyContent:'center' }}>
-                            <Text onPress={()=>this.tabbarToggle()}>Toggle Tabbar</Text>
-                        </View>
+                        <LoginComponent/>
                     </RawContent>
                 </Tab>
                 <Tab name="camera">
@@ -52,15 +50,13 @@ class HomeComponent extends React.Component {
                 <Tab name="favorite">
                     <IconWithBar label="Fav" type={glypy.Favorite} from={'IcoMoon-Free'}/>
                     <RawContent>
-                        <SettingsComponent/>
+                        <LoginComponent/>
                     </RawContent>
                 </Tab>
                 <Tab name="settings">
                     <IconWithBar label="Settings" type={glypy.Settings} from={'IcoMoon-Free'}/>
                     <RawContent>
-                        <View style={{ flex: 1, backgroundColor: 'white', alignItems: 'center', justifyContent:'center' }}>
-                            <Text onPress={()=>console.log('settings')}>Settings</Text>
-                        </View>
+                        <SettingsComponent/>
                     </RawContent>
                 </Tab>
             </Tabbar>;

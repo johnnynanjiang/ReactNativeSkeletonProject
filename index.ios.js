@@ -31,7 +31,15 @@ var customStyles = StyleSheet.create(
 class ReactNativeSkeletonProject extends React.Component {
     render() {
         return <Navigator
-            initialRoute={{component: HomeComponent}}
+            navigationBarHidden={false}
+
+            initialRoute={
+                {
+                    name: "Login",
+                    component: LoginComponent,
+                    backButtonTitle: "back"
+                }
+            }
 
             configureScene={() => {
                 return Navigator.SceneConfigs.FloatFromRight;
